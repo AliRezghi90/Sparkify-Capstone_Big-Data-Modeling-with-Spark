@@ -6,7 +6,7 @@
 <h3 align="center"><a href='https://www.udacity.com/course/data-scientist-nanodegree--nd025'>Udacity Data Scientist Nanodegree Program</a></h3>
 <h1 align="center"> Capstone Project - Churn Prediction for Sparkify streaming app using PySpark </h1>
 
-The project files can be found [here](https://github.com/AliRezghi90/Udacity_Disaster_Response_Pipeline.git) 
+The project files can be found [here](https://github.com/AliRezghi90/Sparkify-Capstone_Big-Data-Modeling-with-Spark.git) 
 
 ## Table of Contents
 - [Introduction](#introduction)
