@@ -4,7 +4,7 @@
    </a>
 </p>
 <h3 align="center"><a href='https://www.udacity.com/course/data-scientist-nanodegree--nd025'>Udacity Data Scientist Nanodegree Program</a></h3>
-<h1 align="center"> Capstone Project - Churn Prediction Using PySpark (Sparkify Big data) </h1>
+<h1 align="center"> Capstone Project: Churn Prediction Using PySpark (Sparkify Big data) </h1>
 
 The project files can be found [here](https://github.com/AliRezghi90/Sparkify-Capstone_Big-Data-Modeling-with-Spark.git) 
 
