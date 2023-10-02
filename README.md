@@ -80,7 +80,11 @@ The program was appropriately run using Python 3.11., however, older versions mi
 
 
 ## File Descriptions - Packages <a name="files"></a>
+Sparkify.ipynb : Jupyrt notebook of the project
+mini_sparkigy_event_data.josn: JSOn file containing the data
 
 
+## Licensing, Authors, and Acknowledgements <a name="licensing"></a>
+Credit must be given to [Udacity](https://www.udacity.com/) for the excellent Udacity Data Scientist Nanodegree program and for the provided dataset. 
 
 
