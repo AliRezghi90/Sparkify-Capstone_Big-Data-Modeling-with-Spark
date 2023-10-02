@@ -17,33 +17,48 @@ The project files can be found [here](https://github.com/AliRezghi90/Sparkify-Ca
 ## Table of Contents
 - [Introduction](#introduction)
 - [Motivation](#motivation)
-- [Summary - Methodology](#summary)
+- [Methodology](#methodology)
 - [Results](#results)
+- [Blogpot] (#blogpost)
 - [Installation - Packages](#installation)
 - [File Descriptions](#files)
 - [Licensing, Authors, and Acknowledgements](#licensing)
 
 
 ## Introduction <a name="introduction"></a>
-This is the Capstone Project for the Data Scientist Nanodegree by Udacity. In this project, the interactions that users have with an imaginary music streaming app named *Sparkify* are analyzed. Sparkify database can be similar to the popular streaming service [Spotify](https://open.spotify.com/). Different Machine Learning models are used to predict customer churn.
+This is the Capstone Project for the Data Scientist Nanodegree by Udacity. In this project, the interactions that users have with an imaginary music streaming app named *Sparkify* are analyzed. Sparkify database is potentially similar to the popular streaming service [Spotify](https://open.spotify.com/). Different Machine Learning (ML) models of [PySpark's Machine Learning Library](https://spark.apache.org/mllib/) are used to predict customer churn.
 
 ## Motivation <a name="motivation"></a>
 Customer churn entails the termination of a service by a customer. Businesses aim to proactively identify potential users who may leave their service before they actually do so. Therefore, predicting customer churn in advance can help the company to provide enticing offers to unsatisfied customers to convince them to stay active. 
-Sparkify users can have different interactions with the app, including but not limited to, playing songs, like or dislike a song, add songs to playlists, add friends, upgrade to Premium with a monthly rate, downgrade to free mode, watch advertisements, and cancel the service. All of this information is stored in the Sparkify's data-set with timestamps of each interaction. The complete dataset has a size of 12 GB, while a mini-dataset is also available with size of 128 MB. The large data set (12 GB) is a big data modeling problem, which is highly demanded. The mini-dataset is used here for modeling and the large dataset will be analyzed in the future. 
+Sparkify users can have different interactions with the app, including but not limited to, playing songs, like or dislike a song, add songs to playlists, add friends, upgrade to Premium with a monthly rate, downgrade to free mode, watch advertisements, and cancel the service. All of this information is stored in the Sparkify's data-set with timestamps of each interaction. The complete dataset has a size of 12 GB, while a mini-dataset is also available with size of 128 MB. The large data set (12 GB) is a big data modeling problem, which is highly demanded. The mini-dataset is used here for modeling and the large dataset will be analyzed for the future work. 
 
 
-## Summary - Methodology <a name="summary"></a>
-The recommendation engine is created by implementing the following steps:
+## Methodology <a name="methodology"></a>
+The churn prediction is created by implementing the following steps:
 ###### I. Exploratory Data Analysis
-The data sets for articles cimmunity and user-item interactions are first explored to find some insights about the data. Next, the data sets are cleansed and prepared for recommendation models.
+The mini-dataset is first explored to find some insights about the data. The behaviors of churned and active users are compared in detail. Next, the data sets are cleansed and prepared for classification models.
 
-###### II. Rank Based Recommendations
-Articels with most interactions are chosen as the most popular articles. The popular articles are especially used for new users as they do not present any interaction with the article community.
+###### II. Feature Engineering
+Based on the insights gained from the previous step, the suitable features are chosen. Non-binary features are scaled and vectoraized with binary features. A complete list of these features can be found in the Notebook. The final dataset has 55 features and a target (label) column.
 
-###### III. User-User Based Collaborative Filtering
-To recommend article to users similar to other users, the user-user based collaborative filtering is an appropriate approach. A user-item matrix is created, which is used to find the users with highest similarities and the coreesponding articles. 
+###### III. Modeling
+Fitst, the dataset is split to train and test datasets. Pipelines with scaled vector of features are created using [VectorAssembler](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.ml.feature.VectorAssembler.html) and [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StandardScaler.html) tools. Cross-validation is performed for several methods of Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC. The metrics of best models from each method is found and the final-best model is chosen based on the F1-score (higher the better) and calculation time (lower the better). Finally, the perfomance of the best model is evaluated on the test dataset.
 
 ###### IV. Matrix Factorization
 The Singular Value Decomposition (SVD) method is a well-known machine learning approach to build recommendation engines. Using the SVD, we will get an idea of how well we can predict new articles an individual might interact with. Since the user-item matrix does not have any NaN, there is no need to perform Funk SVD. 
+
+
+## Results <a name="results"></a>
+
+From the cross-validation on the train dataset, the following scores and calculation time is obtained for the best model of each ML method. It is clear that Random Forset can provide the F1-score of 1.0 with lowest calculation time. 
+| Model                  | F1-score | Calculation Time (second) |
+| ------------------     | -------- | ----------------          |
+| LogisticRegression     | 0.7021   | 14.5863                   |
+| Random Forest          | 0.7045   | 60.1778                   |
+| Gradient Boosted Trees | 0.7045   | 60.1778                   |
+| LinearSVC              | 0.7045   | 60.1778                   |
+
+
+Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC
 
 
