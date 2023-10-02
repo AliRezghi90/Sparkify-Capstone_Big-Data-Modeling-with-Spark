@@ -19,7 +19,7 @@ The project files can be found [here](https://github.com/AliRezghi90/Sparkify-Ca
 - [Motivation](#motivation)
 - [Methodology](#methodology)
 - [Results](#results)
-- [Blogpot] (#blogpost)
+- [Blogpot](#blogpost)
 - [Installation - Packages](#installation)
 - [File Descriptions](#files)
 - [Licensing, Authors, and Acknowledgements](#licensing)
