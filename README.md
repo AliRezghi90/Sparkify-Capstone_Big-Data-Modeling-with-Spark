@@ -64,3 +64,19 @@ Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC
 Further information and results about this project can be found in [this article]() on the medium platform.
 
 
+## Installation - Packages <a name="installation"></a>
+Use pip to install The following packages:
+* Pandas
+* Numpy
+* Matplotlib
+* Jupyter
+* Pysaprk
+* folium
+* device-detector
+* geopy
+* Seaborn
+
+The program was appropriately run using Python 3.11., however, older versions might work as well.
+
+
+
