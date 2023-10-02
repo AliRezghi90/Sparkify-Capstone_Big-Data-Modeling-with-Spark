@@ -44,10 +44,6 @@ Based on the insights gained from the previous step, the suitable features are c
 ###### III. Modeling
 Fitst, the dataset is split to train and test datasets. Pipelines with scaled vector of features are created using [VectorAssembler](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.ml.feature.VectorAssembler.html) and [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StandardScaler.html) tools. Cross-validation is performed for several methods of Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC. The metrics of best models from each method is found and the final-best model is chosen based on the F1-score (higher the better) and calculation time (lower the better). Finally, the perfomance of the best model is evaluated on the test dataset.
 
-###### IV. Matrix Factorization
-The Singular Value Decomposition (SVD) method is a well-known machine learning approach to build recommendation engines. Using the SVD, we will get an idea of how well we can predict new articles an individual might interact with. Since the user-item matrix does not have any NaN, there is no need to perform Funk SVD. 
-
-
 ## Results <a name="results"></a>
 
 From the cross-validation on the train dataset, the following scores and calculation time is obtained for the best model of each ML method. It is clear that Random Forset can provide the F1-score of 1.0 with lowest calculation time. 
@@ -62,3 +58,7 @@ From the cross-validation on the train dataset, the following scores and calcula
 Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC
 
 
+
+## Blogpot <a name="blogpost"></a>
+
+Further information and results about this project can be found in [this article]() on the medium platform.
