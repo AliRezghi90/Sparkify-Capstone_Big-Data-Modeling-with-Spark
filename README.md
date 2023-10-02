@@ -30,7 +30,7 @@ This is the Capstone Project for the Data Scientist Nanodegree by Udacity. In th
 
 ## Motivation <a name="motivation"></a>
 Customer churn entails the termination of a service by a customer. Businesses aim to proactively identify potential users who may leave their service before they actually do so. Therefore, predicting customer churn in advance can help the company to provide enticing offers to unsatisfied customers to convince them to stay active. 
-Sparkify users can have different interactions with the app, including but not limited to, playing songs, like or dislike a song, add songs to playlists, add friends, upgrade to Premium with a monthly rate, downgrade to free mode, watch advertisements, and cancel the service. All of this information is stored in the Sparkify's data-set with timestamps of each interaction. The complete dataset has a size of 12 GB, while a mini-dataset is also available with size of 128 MB. The large data set (12 GB) is a big data modeling problem, which is highly demanded. The mini-dataset is used here for modeling and the large dataset will be analyzed for the future work. 
+Sparkify users can have different interactions with the app, including but not limited to, playing songs, liking or disliking a song, adding songs to playlists, adding friends, upgrading to Premium with a monthly rate, downgrading to free mode, watching advertisements, and canceling the service. All of this information is stored in Sparkify's data set with timestamps of each interaction. The complete dataset has a size of 12 GB, while a mini-dataset is also available with a size of 128 MB. The large data set (12 GB) is a big data modeling problem, which is highly demanded. The mini-dataset is used here for modeling and the large dataset will be analyzed for future work. 
 
 
 ## Methodology <a name="methodology"></a>
@@ -39,24 +39,20 @@ The churn prediction is created by implementing the following steps:
 The mini-dataset is first explored to find some insights about the data. The behaviors of churned and active users are compared in detail. Next, the data sets are cleansed and prepared for classification models.
 
 ###### II. Feature Engineering
-Based on the insights gained from the previous step, the suitable features are chosen. Non-binary features are scaled and vectoraized with binary features. A complete list of these features can be found in the Notebook. The final dataset has 55 features and a target (label) column.
+Based on the insights gained from the previous step, suitable features are chosen. Non-binary features are scaled and vectorized with binary features. A complete list of these features can be found in the Notebook. The final dataset has 55 features and a target (label) column.
 
 ###### III. Modeling
-Fitst, the dataset is split to train and test datasets. Pipelines with scaled vector of features are created using [VectorAssembler](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.ml.feature.VectorAssembler.html) and [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StandardScaler.html) tools. Cross-validation is performed for several methods of Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC. The metrics of best models from each method is found and the final-best model is chosen based on the F1-score (higher the better) and calculation time (lower the better). Finally, the perfomance of the best model is evaluated on the test dataset.
+First, the dataset is split to train and test datasets. Pipelines with scaled vectors of features are created using [VectorAssembler](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.ml.feature.VectorAssembler.html) and [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StandardScaler.html) tools. Cross-validation is performed for several methods of Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC. The metrics of the best models from each method is found and the final model is chosen based on the F1-score (higher the better) and calculation time (lower the better). Finally, the perfomance of the best model is evaluated on the test dataset.
 
 ## Results <a name="results"></a>
 
-From the cross-validation on the train dataset, the following scores and calculation time is obtained for the best model of each ML method. It is clear that Random Forset can provide the F1-score of 1.0 with lowest calculation time. 
+From the cross-validation on the training dataset, the following scores and calculation time is obtained for the best model of each ML method. It is clear that Random Forest can provide the F1-score of 1.0 with the lowest calculation time. 
 | Model                  | F1-score | Calculation Time (second) |
 | ------------------     | -------- | ----------------          |
 | LogisticRegression     | 0.7021   | 14.5863                   |
 | Random Forest          | 0.7045   | 60.1778                   |
 | Gradient Boosted Trees | 0.7045   | 60.1778                   |
 | LinearSVC              | 0.7045   | 60.1778                   |
-
-
-Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC
-
 
 
 ## Blogpot <a name="blogpost"></a>
