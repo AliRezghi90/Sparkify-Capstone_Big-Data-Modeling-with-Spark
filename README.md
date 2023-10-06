@@ -57,7 +57,7 @@ From the cross-validation on the training dataset, the following scores and calc
 
 ## Blogpot <a name="blogpost"></a>
 
-Further information and results about this project can be found in [this article]() on the medium platform.
+Further information and results about this project can be found in [this article](https://medium.com/@a.rezghi90/58f4af05946a) on the medium platform.
 
 
 ## Installation - Packages <a name="installation"></a>
