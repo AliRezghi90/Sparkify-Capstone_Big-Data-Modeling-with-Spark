@@ -77,9 +77,7 @@ The program was appropriately run using Python 3.11., however, older versions mi
 
 ## File Descriptions - Packages <a name="files"></a>
 Sparkify.ipynb : Jupyrt notebook of the project
-
 mini_sparkigy_event_data.josn: JSOn file containing the data
-
 SparkifyLogo: Logo (jpg file)
 
 
