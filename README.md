@@ -49,10 +49,10 @@ First, the dataset is split to train and test datasets. Pipelines with scaled ve
 From the cross-validation on the training dataset, the following scores and calculation time is obtained for the best model of each ML method. It is clear that Random Forest can provide the F1-score of 1.0 with the lowest calculation time. 
 | Model                  | F1-score | Calculation Time (second) |
 | ------------------     | -------- | ----------------          |
-| LogisticRegression     | 0.7021   | 14.5863                   |
-| Random Forest          | 0.7045   | 60.1778                   |
-| Gradient Boosted Trees | 0.7045   | 60.1778                   |
-| LinearSVC              | 0.7045   | 60.1778                   |
+| LogisticRegression     | 0.806   | 362.14                     |
+| Random Forest          | 0.814   | 332.99                     |
+| Gradient Boosted Trees | 0.790   | 1815.89                    |
+| LinearSVC              | 0.783   | 564.89                     |
 
 
 ## Blogpot <a name="blogpost"></a>
