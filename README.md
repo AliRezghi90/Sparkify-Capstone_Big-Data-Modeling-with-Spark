@@ -39,7 +39,7 @@ The churn prediction is created by implementing the following steps:
 The mini-dataset is first explored to find some insights about the data. The behaviors of churned and active users are compared in detail. Next, the data sets are cleansed and prepared for classification models.
 
 ###### II. Feature Engineering
-Based on the insights gained from the previous step, suitable features are chosen. Non-binary features are scaled and vectorized with binary features. A complete list of these features can be found in the Notebook. The final dataset has 55 features and a target (label) column.
+Based on the insights gained from the previous step, suitable features are chosen. Non-binary features are scaled and vectorized with binary features. A complete list of these features can be found in the Notebook. The final dataset has 53 features and a target (label) column.
 
 ###### III. Modeling
 First, the dataset is split to train and test datasets. Pipelines with scaled vectors of features are created using [VectorAssembler](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.ml.feature.VectorAssembler.html) and [StandardScaler](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.ml.feature.StandardScaler.html) tools. Cross-validation is performed for several methods of Logistic Regression, Random Forest, Gradient Boosted Trees, and Linear SVC. The metrics of the best models from each method is found and the final model is chosen based on the F1-score (higher the better) and calculation time (lower the better). Finally, the perfomance of the best model is evaluated on the test dataset.
